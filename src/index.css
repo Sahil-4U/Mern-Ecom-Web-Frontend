@@ -5,6 +5,7 @@
 html,
 body {
   font-size: 20px;
+  overflow: hidden;
 }
 .navbar {
   font-size: 17px;
@@ -19,6 +20,10 @@ body {
 
 .active {
   border-bottom: 2px solid black;
+}
+.pnf {
+  width: 100%;
+  height: 100%;
 }
 
 .footer-links a {

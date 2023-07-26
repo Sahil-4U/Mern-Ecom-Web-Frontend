@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 function Pagenotfound() {
     return (
         <Layout>
-            <div className='d-flex justify-content-center align-items-center flex-column m-4'>
+            <div className='d-flex justify-content-center align-items-center flex-column p-4 pnf'>
                 <div className='d-flex align-items-center'>
                     <div class="spinner-border text-warning" role="status">
                         <span class="visually-hidden">Loading...</span>
