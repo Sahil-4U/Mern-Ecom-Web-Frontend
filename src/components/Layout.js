@@ -6,7 +6,7 @@ function Layout(props) {
     return (
         <div>
             <Header />
-            Layout
+
             <main>
                 {props.children}
             </main>
