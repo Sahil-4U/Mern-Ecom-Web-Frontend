@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
-        <div className='bg-dark text-light p-3'>
+        <div className='bg-dark text-light p-3' >
             <h4 className='text-center'>
                 All rights reserved &copy; SaHiL-sHaRmA
             </h4>
-            <p className='text-center footer-links'>
+            <p className='text-center footer-links '>
                 <Link to={'/about'}>
                     About
                 </Link>
@@ -16,8 +16,8 @@ function Footer() {
                     Contact Us
                 </Link>
                 {" | "}
-                <Link to={'/category'}>
-                    Category
+                <Link to={'/policy'}>
+                    Private Policies
                 </Link>
 
             </p>

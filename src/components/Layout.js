@@ -7,7 +7,7 @@ function Layout(props) {
         <div>
             <Header />
 
-            <main>
+            <main style={{ minHeight: '68.5vh' }}>
                 {props.children}
             </main>
             <Footer />
