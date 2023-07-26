@@ -37,3 +37,10 @@ body {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   border-bottom: 2px solid white;
 }
+/* for mobile fons and smaill ones */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 15px;
+    overflow: scroll;
+  }
+}

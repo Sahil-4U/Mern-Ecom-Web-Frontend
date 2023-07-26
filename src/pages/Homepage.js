@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 
 function Homepage() {
     return (
-        <Layout>Homepage</Layout>
+        <Layout title={"Ecommerce-homePage"}>Homepage</Layout>
     )
 }
 

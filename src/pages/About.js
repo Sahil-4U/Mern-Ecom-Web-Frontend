@@ -3,7 +3,13 @@ import Layout from '../components/Layout'
 
 function About() {
     return (
-        <Layout>About</Layout>
+        <Layout title={"Ecommerce-aboutPage"}>
+            <center>
+                <h5>
+                    About page i will work on it.
+                </h5>
+            </center>
+        </Layout>
     )
 }
 
