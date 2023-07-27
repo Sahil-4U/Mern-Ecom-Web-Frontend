@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import Layout from '../components/Layout'
+import axios from 'axios';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
+
 
 function Registerpage() {
     const [name, setName] = useState('');
@@ -8,23 +12,29 @@ function Registerpage() {
     const [phone, setPhone] = useState('');
     const [add, setAdd] = useState('');
 
+    const navigate = useNavigate();
+
 
     // here i am handling submit function
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const Obj = {
-            name: name,
-            email: email,
-            password: password,
-            phone: phone,
-            address: add
+
+
+        try {
+            const res = await axios.post(`http://localhost:9090/auth/register`,
+                { name, email, phone, password, address: add }
+            );
+            if (res.data.success) {
+                toast.success(res.data.message);
+                navigate('/login');
+            } else {
+                toast.error(res.data.message);
+            }
+            console.log(res.data);
+        } catch (erro) {
+            console.log(erro);
+            toast.error('Something went wrong in post request');
         }
-        console.log(Obj);
-        setName('');
-        setEmail('');
-        setAdd('');
-        setPassword('');
-        setPhone('');
     }
     return (
         <Layout title={"Register-Ecom-app"}>
