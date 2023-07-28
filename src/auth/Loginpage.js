@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import './form.css';
+import { useAuth } from '../context/authContext';
 
 function Loginpage() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [auth, setAuth] = useAuth();
 
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
@@ -18,6 +20,12 @@ function Loginpage() {
             );
             if (res.data.success) {
                 toast.success(res.data.message);
+                setAuth((prev) => {
+                    return {
+                        ...prev, user: res.data.user,
+                        token: res.data.token
+                    };
+                })
                 navigate('/');
 
             } else {
