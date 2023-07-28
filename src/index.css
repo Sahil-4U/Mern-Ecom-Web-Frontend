@@ -25,7 +25,10 @@ body {
   width: 100%;
   height: 100%;
 }
-
+.registerLayout {
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #26dad7 100%);
+}
 .footer-links a {
   font-family: roboto;
   text-decoration: none;
