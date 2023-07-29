@@ -39,7 +39,7 @@ function Registerpage() {
     return (
         <Layout title={"Register-Ecom-app"}>
             <div className='registerLayout'>
-                <h1 className="display-5 text-center py-2 text-info ">Register User</h1>
+                <h1 className="display-4 text-center py-2 text-light ">Register User</h1>
 
                 <form className='d-flex justify-content-center align-items-center px-5' onSubmit={handleSubmit}>
                     <div className='row'>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Layout from '../components/Layout'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import './form.css';
@@ -12,6 +12,8 @@ function Loginpage() {
     const [auth, setAuth] = useAuth();
 
     const navigate = useNavigate();
+    const location = useLocation();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -27,7 +29,7 @@ function Loginpage() {
                     };
                 })
                 localStorage.setItem('user', JSON.stringify(res.data));
-                navigate('/');
+                navigate(location.state || '/');
 
             } else {
                 toast.error(res.data.message);
