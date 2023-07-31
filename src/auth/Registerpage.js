@@ -11,6 +11,7 @@ function Registerpage() {
     const [password, setPassword] = useState('');
     const [phone, setPhone] = useState('');
     const [add, setAdd] = useState('');
+    const [question, setQuestion] = useState('');
 
     const navigate = useNavigate();
 
@@ -63,6 +64,10 @@ function Registerpage() {
                         <div className="mb-3 col-6">
                             <label htmlFor="address" className="form-label">Address</label>
                             <input type="text" className="form-control" id="address" placeholder='address..' value={add} onChange={(e) => setAdd(e.target.value)} required />
+                        </div>
+                        <div className="mb-3 col-6">
+                            <label htmlFor="answer" className="form-label">Question</label>
+                            <input type="text" className="form-control" id="answer" placeholder='What is your teacher name' value={question} onChange={(e) => setQuestion(e.target.value)} required />
                         </div>
                         <div className='text-center '>
                             <button type="submit" className="btn btn-outline-primary  submit-button">Submit</button>

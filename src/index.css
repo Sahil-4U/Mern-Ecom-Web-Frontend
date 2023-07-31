@@ -41,6 +41,14 @@ body {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   border-bottom: 2px solid white;
 }
+.forget-password {
+  font-size: small;
+  cursor: pointer;
+}
+.forget-password:hover {
+  color: blue !important;
+  font-weight: bold;
+}
 /* for mobile fons and smaill ones */
 @media screen and (max-width: 768px) {
   body {

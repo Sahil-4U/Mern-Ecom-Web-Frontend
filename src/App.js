@@ -9,6 +9,7 @@ import Registerpage from './auth/Registerpage';
 import Loginpage from './auth/Loginpage';
 import Dashboardpage from './pages/user/Dashboardpage';
 import PrivateRoutes from './Routes/PrivateRoutes';
+import ForgotPassword from './auth/ForgotPassword';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='' element={<Dashboardpage />} />
       </Route>
       <Route path='/login' element={<Loginpage />} />
+      <Route path='/forget-password' element={<ForgotPassword />} />
       <Route path='/about' element={<About />} />
       <Route path='/contact' element={<Contact />} />
       <Route path='/policy' element={<Policy />} />
