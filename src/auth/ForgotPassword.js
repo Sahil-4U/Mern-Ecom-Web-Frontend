@@ -69,7 +69,7 @@ function ForgotPassword() {
                             value={answer}
                             onChange={(e) => setAnswer(e.target.value)}
                             className="form-control"
-                            id="exampleInputPassword1"
+                            id="exampleInputAnswer"
                             placeholder="What is your teacher name"
                             required
                         />

@@ -23,7 +23,7 @@ function Registerpage() {
 
         try {
             const res = await axios.post(`http://localhost:9090/auth/register`,
-                { name, email, phone, password, address: add }
+                { name, email, phone, password, address: add, answer: question }
             );
             if (res.data.success) {
                 toast.success(res.data.message);

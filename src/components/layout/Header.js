@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../../context/authContext';
 
 
@@ -42,9 +42,22 @@ function Header() {
                                         </li>
                                     </>
                                 ) : (
-                                    <li className="nav-item">
-                                        <NavLink className="nav-link" onClick={handleLogout} to={'/login'}>Logout</NavLink>
+
+                                    <li className="nav-item dropdown">
+                                        <Link className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            {
+                                                auth.user.name
+                                            }
+                                        </Link>
+                                        <ul className="dropdown-menu">
+                                            <li><NavLink to={'/dashboard'} className="dropdown-item">Dashboard</NavLink></li>
+                                            <li><hr className="dropdown-divider" /></li>
+                                            <li className="nav-item">
+                                                <NavLink className="dropdown-item" onClick={handleLogout} to={'/login'}>Logout</NavLink>
+                                            </li>
+                                        </ul>
                                     </li>
+
                                 )
                             }
                             <li className="nav-item">
