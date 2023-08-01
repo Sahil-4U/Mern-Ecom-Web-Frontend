@@ -50,7 +50,7 @@ function Header() {
                                             }
                                         </Link>
                                         <ul className="dropdown-menu">
-                                            <li><NavLink to={'/dashboard'} className="dropdown-item">Dashboard</NavLink></li>
+                                            <li><NavLink to={`/dashboard/${auth?.user?.role === 1 ? 'admin' : "user"}`} className="dropdown-item">Dashboard</NavLink></li>
                                             <li><hr className="dropdown-divider" /></li>
                                             <li className="nav-item">
                                                 <NavLink className="dropdown-item" onClick={handleLogout} to={'/login'}>Logout</NavLink>
