@@ -10,6 +10,8 @@ import Loginpage from './auth/Loginpage';
 import Dashboardpage from './pages/user/Dashboardpage';
 import PrivateRoutes from './Routes/PrivateRoutes';
 import ForgotPassword from './auth/ForgotPassword';
+import AdminRoutes from './Routes/AdminRoutes';
+import AdminDashboard from './pages/admin/AdminDashboard';
 
 function App() {
 
@@ -18,7 +20,10 @@ function App() {
       <Route path='/' element={<Homepage />} />
       <Route path='/register' element={<Registerpage />} />
       <Route path='/dashboard' element={<PrivateRoutes />}>
-        <Route path='' element={<Dashboardpage />} />
+        <Route path='user' element={<Dashboardpage />} />
+      </Route>
+      <Route path='/dashboard' element={<AdminRoutes />}>
+        <Route path='admin' element={<AdminDashboard />} />
       </Route>
       <Route path='/login' element={<Loginpage />} />
       <Route path='/forget-password' element={<ForgotPassword />} />
