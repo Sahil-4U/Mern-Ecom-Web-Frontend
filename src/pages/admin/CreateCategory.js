@@ -4,7 +4,8 @@ import AdminMenu from '../../components/layout/AdminMenu'
 
 function CreateCategory() {
     return (
-        <Layout>
+        <Layout title={'Dashboard-Create Category'}>
+            <div className='container-fluid m-3 p-3'>
             <div className='row'>
                 <div className='col-md-3'>
                     <AdminMenu />
@@ -13,6 +14,7 @@ function CreateCategory() {
                     <h3>
                         Categories
                     </h3>
+                </div>
                 </div>
             </div>
         </Layout>
