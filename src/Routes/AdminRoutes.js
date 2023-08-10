@@ -11,7 +11,8 @@ export default function AdminRoutes() {
     useEffect(() => {
         const checkAuth = async () => {
             const res = await axios.get('http://localhost:9090/auth/admin-auth');
-            if (res.data === "OK") {
+            console.log(res);
+            if (res.data.ok) {
                 setOk(true);
             } else {
                 setOk(false);
@@ -20,6 +21,6 @@ export default function AdminRoutes() {
         if (auth?.token) checkAuth();
     }, [auth?.token]);
 
-    return ok ? <Outlet /> : <Spinner />;
+    return ok ? <Outlet /> : <Spinner path='/' />;
 }
 
