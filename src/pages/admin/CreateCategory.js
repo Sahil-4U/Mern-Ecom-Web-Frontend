@@ -16,7 +16,7 @@ function CreateCategory() {
             }
         } catch (error) {
             console.log(error);
-            toast.error('Something went wrong in get all categories');
+            toast.error('Something went wrong in get all categories')
         }
 
     }
