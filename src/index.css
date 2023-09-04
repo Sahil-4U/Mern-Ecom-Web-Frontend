@@ -52,7 +52,7 @@ body {
 /* for mobile fons and smaill ones */
 @media screen and (max-width: 768px) {
   body {
-    font-size: 15px;
+    font-size: 12px;
     overflow: scroll;
   }
 }

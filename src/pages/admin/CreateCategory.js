@@ -11,7 +11,7 @@ function CreateCategory() {
         try {
             const { data } = await axios.get('http://localhost:9090/category/all-category');
             if (data.success) {
-                setCategories(data);
+                setCategories(data.categorydb);
                 console.log(data);
             }
         } catch (error) {
@@ -25,15 +25,42 @@ function CreateCategory() {
     }, [])
     return (
         <Layout title={'Dashboard-Create Category'}>
-            <div className='container-fluid m-3 p-3'>
+            <div className='container-fluid m-1 p-3'>
             <div className='row'>
                 <div className='col-md-3'>
                     <AdminMenu />
                 </div>
                 <div className='col-md-9'>
                     <h3>
-                        Categories
-                    </h3>
+                            Manage Categories
+                        </h3>
+                        <div className='w-75'>
+                            <table className="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    {
+                                        categories && categories.map((v) => {
+                                            return (
+                                                <tr key={v._id}>
+                                                    <td>{v.name}</td>
+                                                    <td><button className='btn btn-outline-dark'>
+                                                        edit
+                                                    </button></td>
+                                                </tr>
+                                            )
+                                        })
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
                 </div>
                 </div>
             </div>
