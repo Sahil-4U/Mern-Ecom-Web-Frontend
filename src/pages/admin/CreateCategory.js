@@ -3,9 +3,27 @@ import Layout from '../../components/Layout'
 import AdminMenu from '../../components/layout/AdminMenu';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import CategoryForm from '../../components/Form/CategoryForm';
 
 function CreateCategory() {
     const [categories, setCategories] = useState([]);
+    const [name, setName] = useState('');
+    // handle form submit
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const { data } = await axios.post('http://localhost:9090/category/create-category', { name });
+            if (data?.success) {
+                toast.success(`${name} is created successfully`);
+                console.log(data.categoryDb);
+            } else {
+                toast.error(data.message);
+            }
+        } catch (error) {
+            console.log(error);
+            toast.error('something went wrong in handlesubmit form');
+        }
+    }
 
     const getallCat = async () => {
         try {
@@ -31,9 +49,12 @@ function CreateCategory() {
                     <AdminMenu />
                 </div>
                 <div className='col-md-9'>
-                    <h3>
+                        <h3>
                             Manage Categories
                         </h3>
+                        <div className='p-2'>
+                            <CategoryForm handleSubmit={handleSubmit} value={name} setValue={setName} />
+                        </div>
                         <div className='w-75'>
                             <table className="table table-striped">
                                 <thead>
