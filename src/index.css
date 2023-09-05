@@ -49,10 +49,18 @@ body {
   color: blue !important;
   font-weight: bold;
 }
+.table-group{
+  height: 13rem ;
+  overflow-y:scroll; 
+}
 /* for mobile fons and smaill ones */
 @media screen and (max-width: 768px) {
   body {
     font-size: 12px;
     overflow: scroll;
   }
+  .table-group{
+  height: 3rem ;
+  overflow-y:scroll; 
+}
 }

@@ -55,7 +55,7 @@ function CreateCategory() {
                         <div className='p-2'>
                             <CategoryForm handleSubmit={handleSubmit} value={name} setValue={setName} />
                         </div>
-                        <div className='w-75'>
+                        <div className='w-75 table-group'>
                             <table className="table table-striped">
                                 <thead>
                                     <tr>
@@ -72,7 +72,10 @@ function CreateCategory() {
                                                     <td>{v.name}</td>
                                                     <td><button className='btn btn-outline-dark'>
                                                         edit
-                                                    </button></td>
+                                                    </button>
+                                                        <button className='btn btn-danger ms-1'>
+                                                            Delete
+                                                        </button></td>
                                                 </tr>
                                             )
                                         })
